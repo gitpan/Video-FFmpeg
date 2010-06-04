@@ -1,6 +1,6 @@
 package Video::FFmpeg::AVStream;
 
-our $VERSION = '0.42';
+our $VERSION = '0.45';
 
 1;
 __END__

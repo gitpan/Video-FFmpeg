@@ -1,6 +1,6 @@
 package Video::FFmpeg::AVStream::Subtitle;
 
-our $VERSION = '0.42';
+our $VERSION = '0.45';
 
 our @ISA = ('Video::FFmpeg::AVStream');
 

@@ -2,6 +2,7 @@ Changes
 FFmpeg.xs
 Makefile.PL
 MANIFEST
+META.yml
 ppport.h
 README
 test.ogm

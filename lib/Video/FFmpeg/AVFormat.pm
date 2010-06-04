@@ -2,7 +2,7 @@ package Video::FFmpeg::AVFormat;
 use Video::FFmpeg;
 use Switch;
 
-our $VERSION = '0.43';
+our $VERSION = '0.45';
 
 sub new {
 	$i = Video::FFmpeg::AVFormat::open($_[1]);

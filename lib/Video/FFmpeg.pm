@@ -12,7 +12,7 @@ use Video::FFmpeg::AVStream::Subtitle;
 
 our @ISA = ('Video::FFmpeg::AVFormat');
 
-our $VERSION = '0.43';
+our $VERSION = '0.45';
 
 sub new {
 	my $class = shift;
