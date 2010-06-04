@@ -5,7 +5,7 @@ MANIFEST
 META.yml
 ppport.h
 README
-test.ogm
+test.mp4
 typemap
 t/Video-FFmpeg.t
 lib/Video/FFmpeg.pm

@@ -9,3 +9,5 @@ Revision history for Perl extension Video::FFmpeg.
 0.45 Wed Jun 4 03:40:00 2010
 	- Added META.yml
 	- Fixed versioning info
+0.46 Wed Jun 4 03:40:00 2010
+	- Fixed issue with test video. Variable bitrates give variable responses.

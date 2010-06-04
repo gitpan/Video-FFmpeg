@@ -1,6 +1,6 @@
 package Video::FFmpeg::AVStream::Audio;
 
-our $VERSION = '0.45';
+our $VERSION = '0.46';
 
 our @ISA = ('Video::FFmpeg::AVStream');
 

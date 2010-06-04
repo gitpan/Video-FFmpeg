@@ -1,7 +1,7 @@
  --- #YAML:1.0
  name: Video-FFmpeg
  abstract: Build and install Perl modules
- version: 0.45
+ version: 0.46
  author:
    - Max Vohra <max@seattlenetworks.com>
  license: perl
