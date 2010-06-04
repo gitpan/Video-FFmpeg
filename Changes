@@ -4,3 +4,5 @@ Revision history for Perl extension Video::FFmpeg.
 	- First public release
 0.43 Wed Dec 29 04:43:20 2009
 	- Fixed insufficient thread locking around avcodec_open/close() error;
+0.44 Wed Dec 29 04:43:20 2009
+	- Fixed typo in metatag functions. Thanks Sergiy Borodych

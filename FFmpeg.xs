@@ -16,8 +16,8 @@ typedef struct AVStream Video_FFmpeg_AVStream_Video;
 
 char* get_metadata(AVStream *st, const char* tag){
 #if (LIBAVFORMAT_VERSION_MINOR > 44) || (LIBAVFORMAT_VERSION_MAJOR > 52)
-    AVMetadataTag *lang = av_metadata_get(st->metadata, "language", NULL, 0);
-    return lang->value;
+    AVMetadataTag *tagdata = av_metadata_get(st->metadata, tag, NULL, 0);
+    return tagdata->value;
 #else
 	croak("Metadata requires libavformat 52.44 or greater\n");
 #endif
@@ -25,7 +25,7 @@ char* get_metadata(AVStream *st, const char* tag){
 
 char* get_lang(AVStream *st){
 #if (LIBAVFORMAT_VERSION_MINOR > 44) || (LIBAVFORMAT_VERSION_MAJOR > 52)
-    AVMetadataTag *lang = av_metadata_get(st->metadata, tag, NULL, 0);
+    AVMetadataTag *lang = av_metadata_get(st->metadata, "language", NULL, 0);
     return lang->value;
 #else
 	return st->language;
