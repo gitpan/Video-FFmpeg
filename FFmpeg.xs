@@ -4,7 +4,7 @@
 
 #include "ppport.h"
 
-#include <libavformat/avformat.h>
+#include <avformat.h>
 #include <pthread.h> 
 pthread_mutex_t AVFormatCtxMP; 
 
@@ -37,6 +37,7 @@ MODULE = Video::FFmpeg		PACKAGE = Video::FFmpeg
 
 BOOT:
 	av_register_all();
+	pthread_mutex_init(&AVFormatCtxMP, NULL);
 
 MODULE = Video::FFmpeg		PACKAGE = Video::FFmpeg::AVFormat
 

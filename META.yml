@@ -1,7 +1,7 @@
  --- #YAML:1.0
  name: Video-FFmpeg
- abstract: Build and install Perl modules
- version: 0.46
+ abstract: Extract Video information using libavformat
+ version: 0.47
  author:
    - Max Vohra <max@seattlenetworks.com>
  license: perl
