@@ -1,22 +1,21 @@
- --- #YAML:1.0
- name: Video-FFmpeg
- abstract: Extract Video information using libavformat
- version: 0.47
- author:
-   - Max Vohra <max@seattlenetworks.com>
- license: perl
- distribution_type: module
- requires:
-   ExtUtils::MakeMaker: 0
-   ExtUtils::PkgConfig: 0
- recommends:
-   Pod::Text: 0
-   YAML: 0.35
- build_requires:
-   Test::More: 0
- urls:
-   license: http://dev.perl.org/licenses/
- meta-spec:
-   version: 1.3
-   url: http://module-build.sourceforge.net/META-spec-v1.3.html
- generated_by: Max Vohra using vim
+---
+abstract: 'Retrieve video properties using libavformat such as: height width codec fps'
+author:
+  - 'Rene Schickbauer <rene.schickbauer@magnapowertrain.com>'
+build_requires:
+  ExtUtils::MakeMaker: 0
+configure_requires:
+  ExtUtils::MakeMaker: 0
+dynamic_config: 1
+generated_by: 'ExtUtils::MakeMaker version 6.62, CPAN::Meta::Converter version 2.120351'
+license: unknown
+meta-spec:
+  url: http://module-build.sourceforge.net/META-spec-v1.4.html
+  version: 1.4
+name: Video-FFmpeg
+no_index:
+  directory:
+    - t
+    - inc
+requires: {}
+version: 0.48

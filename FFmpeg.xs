@@ -4,7 +4,7 @@
 
 #include "ppport.h"
 
-#include <avformat.h>
+#include <libavformat/avformat.h>
 #include <pthread.h> 
 pthread_mutex_t AVFormatCtxMP; 
 
@@ -88,7 +88,7 @@ nb_streams(Video_FFmpeg_AVFormat *self)
 Video_FFmpeg_AVStream_Video *
 get_video_stream(Video_FFmpeg_AVFormat *self, int id)
 	CODE:
-		if(CODEC_TYPE_VIDEO == self->streams[id]->codec->codec_type)
+		if(AVMEDIA_TYPE_VIDEO == self->streams[id]->codec->codec_type)
 			RETVAL = self->streams[id];
 		else
 			RETVAL = NULL;
@@ -97,7 +97,7 @@ get_video_stream(Video_FFmpeg_AVFormat *self, int id)
 Video_FFmpeg_AVStream_Audio *
 get_audio_stream(Video_FFmpeg_AVFormat *self, int id)
 	CODE:
-		if(CODEC_TYPE_AUDIO == self->streams[id]->codec->codec_type)
+		if(AVMEDIA_TYPE_AUDIO == self->streams[id]->codec->codec_type)
 			RETVAL = self->streams[id];
 		else
 			RETVAL = NULL;
@@ -175,19 +175,19 @@ char *
 codec_type(Video_FFmpeg_AVStream *st);
 	CODE:
 		switch(st->codec->codec_type){
-			case CODEC_TYPE_VIDEO:
+			case AVMEDIA_TYPE_VIDEO:
 				RETVAL = "video";
 				break;
-			case CODEC_TYPE_AUDIO:
+			case AVMEDIA_TYPE_AUDIO:
 				RETVAL = "audio";
 				break;
-			case CODEC_TYPE_SUBTITLE:
+			case AVMEDIA_TYPE_SUBTITLE:
 				RETVAL = "subtitle";
 				break;
-			case CODEC_TYPE_DATA:
+			case AVMEDIA_TYPE_DATA:
 				RETVAL = "data";
 				break;
-			case CODEC_TYPE_ATTACHMENT:
+			case AVMEDIA_TYPE_ATTACHMENT:
 				RETVAL = "attachment";
 				break;
 			default:

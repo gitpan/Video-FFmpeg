@@ -21,12 +21,12 @@ is($info->start_time,0,"start_time");
 is($info->bit_rate,330299,"bit_rate");
 # For some reason mp2 is reported as mp3 under libavformat 52.16.0
 #is($info->audio->codec,"mp2","acodec");
-is($info->audio->bit_rate,64000,"abitrate");
+ok(abs($info->audio->bit_rate - 64000 < 2),"abitrate");
 is($info->audio->sample_rate,44100,"asample_rate");
 is($info->audio->channels,2,"achannels");
 is($info->video->codec,"mpeg4","vcodec");
 is($info->video->width,400,"vwidth");
 is($info->video->height,300,"vheight");
-is($info->video->fps,29.9700298309326,"vfps");
+ok(abs($info->video->fps - 29.9700298309326) < 0.1,"vfps");
 is($info->video->display_aspect,"4:3","vDAR");
 is($info->video->pixel_aspect,"1:1","vPAR");

@@ -12,7 +12,7 @@ use Video::FFmpeg::AVStream::Subtitle;
 
 our @ISA = ('Video::FFmpeg::AVFormat');
 
-our $VERSION = '0.47';
+our $VERSION = '0.48';
 
 sub new {
 	my $class = shift;
@@ -35,8 +35,8 @@ Video::FFmpeg - Retrieve video properties using libavformat such as: height widt
 
 =head1 SYNOPSIS
 
+  use 5.010;
   use Video::FFmpeg;
-  use Switch;
 
   my $info = Video::FFmpeg::AVFormat->new($ARGV[0]);
 
@@ -56,16 +56,16 @@ Video::FFmpeg - Retrieve video properties using libavformat such as: height widt
     print "\ttype: ",$stream->codec_type,"\n";
     print "\tcodec: ",$stream->codec,"\n";
     print "\tlanguage: ",$stream->lang,"\n";
-    switch($stream->codec_type){
-      case "video" {
+    given($stream->codec_type){
+      when("video") {
         print "\tfps: ",$stream->fps,"\n";
         print "\tDAR: ",$stream->display_aspect,"\n";
       }
-      case "audio" {
+      when("audio") {
         print "\tsample rate: ",$stream->sample_rate,"hz\n";
         print "\taudio language: ",$stream->lang,"\n";
       }
-      case "subtitle" {
+      when("subtitle") {
         print "\tsub codec: ",$stream->codec,"\n";
         print "\tsub language: ",$stream->lang,"\n";
       }
@@ -196,6 +196,12 @@ None by default.
 =head1 AUTHOR
 
 Max Vohra, E<lt>max@seattlenetworks.comE<gt> L<html://www.seattlenetworks.com/>
+
+This unauthorized version by Rene Schickbauer E<lt>rene.schickbauer@magnapowertrain.comE<gt>
+
+=head UNAUTHORIZED VERSION
+
+This unauthorized version fixes some critical bugs, see file "Changes" for details
 
 =head1 COPYRIGHT AND LICENSE
 

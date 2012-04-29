@@ -1,17 +1,19 @@
 Changes
 FFmpeg.xs
+lib/Video/FFmpeg.pm
+lib/Video/FFmpeg/AVFormat.pm
+lib/Video/FFmpeg/AVStream.pm
+lib/Video/FFmpeg/AVStream/Audio.pm
+lib/Video/FFmpeg/AVStream/Subtitle.pm
+lib/Video/FFmpeg/AVStream/Video.pm
 Makefile.PL
-MANIFEST
+MANIFEST			This list of files
+MANIFEST.SKIP
 META.yml
 ppport.h
 README
+t/Video-FFmpeg.t
 test
 test.mp4
 typemap
-t/Video-FFmpeg.t
-lib/Video/FFmpeg.pm
-lib/Video/FFmpeg/AVFormat.pm
-lib/Video/FFmpeg/AVStream/Subtitle.pm
-lib/Video/FFmpeg/AVStream/Audio.pm
-lib/Video/FFmpeg/AVStream/Video.pm
-lib/Video/FFmpeg/AVStream.pm
+META.json                                Module JSON meta-data (added by MakeMaker)

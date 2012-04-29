@@ -1,5 +1,11 @@
-Video-FFmpeg version 0.47
+Video-FFmpeg version 0.48
 ========================
+
+** This UNAUTHORIZED VERSION was done by Rene Schickbauer
+** to fix some bugs that completly broke this module
+**
+** See https://rt.cpan.org/Public/Bug/Display.html?id=73132
+** for more information
 
 The README is used to introduce the module and provide instructions on
 how to install the module, any machine dependencies it may have (for

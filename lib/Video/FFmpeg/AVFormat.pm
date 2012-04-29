@@ -1,9 +1,10 @@
+use 5.010;
 package Video::FFmpeg::AVFormat;
 use Video::FFmpeg;
-use Switch;
 
-our $VERSION = '0.47';
+our $VERSION = '0.48';
 
+my $i;
 sub new {
 	$i = Video::FFmpeg::AVFormat::open($_[1]);
 }
@@ -13,20 +14,20 @@ sub streams {
     my @streams;
 	for(0 .. $self->nb_streams-1){
 		my $stream = $self->get_stream($_);
-		switch($stream->codec_type){
-			case "video" {
+		given($stream->codec_type){
+			when ("video") {
 				bless $stream, 'Video::FFmpeg::AVStream::Video';
 				push @streams, $stream;
 			}
-			case "audio" {
+			when ("audio") {
 				bless $stream, 'Video::FFmpeg::AVStream::Audio';
 				push @streams, $stream;
 			}
-			case "subtitle" {
+			when ("subtitle") {
 				bless $stream, 'Video::FFmpeg::AVStream::Subtitle';
 				push @streams, $stream;
 			}
-			else {
+			default {
 				push @streams, $stream;
 			}
 		}
@@ -86,7 +87,6 @@ Video::FFmpeg::AVFormat - Retrieve video properties using libavformat such as: h
 =head1 SYNOPSIS
 
   use Video::FFmpeg;
-  use Switch;
 
   my $info = Video::FFmpeg::AVFormat->new($ARGV[0]);
 
@@ -106,16 +106,16 @@ Video::FFmpeg::AVFormat - Retrieve video properties using libavformat such as: h
     print "\ttype: ",$stream->codec_type,"\n";
     print "\tcodec: ",$stream->codec,"\n";
     print "\tlanguage: ",$stream->lang,"\n";
-    switch($stream->codec_type){
-      case "video" {
+    given($stream->codec_type){
+      when("video") {
         print "\tfps: ",$stream->fps,"\n";
         print "\tDAR: ",$stream->display_aspect,"\n";
       }
-      case "audio" {
+      when("audio") {
         print "\tsample rate: ",$stream->sample_rate,"hz\n";
         print "\taudio language: ",$stream->lang,"\n";
       }
-      case "subtitle" {
+      when("subtitle") {
         print "\tsub codec: ",$stream->codec,"\n";
         print "\tsub language: ",$stream->lang,"\n";
       }
@@ -246,6 +246,12 @@ None by default.
 =head1 AUTHOR
 
 Max Vohra, E<lt>max@seattlenetworks.comE<gt> L<html://www.seattlenetworks.com/>
+
+This unauthorized version by Rene Schickbauer E<lt>rene.schickbauer@magnapowertrain.comE<gt>
+
+=head UNAUTHORIZED VERSION
+
+This unauthorized version fixes some critical bugs, see file "Changes" for details
 
 =head1 COPYRIGHT AND LICENSE
 

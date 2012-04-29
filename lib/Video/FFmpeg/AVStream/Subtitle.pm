@@ -1,6 +1,6 @@
 package Video::FFmpeg::AVStream::Subtitle;
 
-our $VERSION = '0.47';
+our $VERSION = '0.48';
 
 our @ISA = ('Video::FFmpeg::AVStream');
 
@@ -71,6 +71,12 @@ None by default.
 =head1 AUTHOR
 
 Max Vohra, E<lt>max@seattlenetworks.comE<gt> L<html://www.seattlenetworks.com/>
+
+This unauthorized version by Rene Schickbauer E<lt>rene.schickbauer@magnapowertrain.comE<gt>
+
+=head UNAUTHORIZED VERSION
+
+This unauthorized version fixes some critical bugs, see file "Changes" for details
 
 =head1 COPYRIGHT AND LICENSE
 
